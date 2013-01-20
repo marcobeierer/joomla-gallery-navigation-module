@@ -5,11 +5,19 @@
 	<!--<property name="joomla_install" value="../../dev.joomla.test/joomla25" />-->
 	<property name="joomla_install" value="../../projects.mysites/gallery.erstellung" />
 	<property name="extension" value="mod_gallery_navigation" />
+	<property name="version" value="latest" />
 
 	<target name="copy_all" description="Copies files to test project.">
 		<echo message="Running build.xml. Copying files from dev to test..." />
 		
-		<copy todir="${joomla_install}/modules">
+		<delete>
+			<fileset dir="${joomla_install}">
+				<include name="modules/${extension}/**" />
+				<!-- TODO language -->
+			</fileset>
+		</delete>
+		
+		<copy todir="${joomla_install}/modules/${extension}">
 			<fileset dir="${source}">
 				<include name="**" />
 				<exclude name="language/**" />
@@ -28,13 +36,13 @@
 	<target name="package" description="Create package.">
 		<echo message="Running build.xml. Creating package..." />
 	
-		<zip destfile="./packages/${extension}-latest.zip">
+		<zip destfile="./packages/${extension}-${version}.zip">
 			<fileset dir="${source}">
 				<include name="**" />
 			</fileset>
         </zip>
 		
-		<tar destfile="./packages/${extension}-latest.tar.gz" compression="gzip">
+		<tar destfile="./packages/${extension}-${version}.tar.gz" compression="gzip">
 			<fileset dir="${source}">
 				<include name="**" />
 			</fileset>
