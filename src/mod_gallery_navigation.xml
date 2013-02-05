@@ -13,16 +13,16 @@
 	<copyright>Copyright (C) 2013 Marco Beierer. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
 
-	<files module="mod_gallery_navigation">
+	<files>
 		<folder>tmpl</folder>
-		<file>mod_gallery_navigation.php</file>
+		<file module="mod_gallery_navigation">mod_gallery_navigation.php</file>
 		<file>mod_gallery_navigation.xml</file>
 		<file>index.html</file>
 	</files>
 	
 	<languages folder="language">
-		<language tag="en-GB">en-GB.mod_gallery_navigation.ini</language>
-		<language tag="en-GB">en-GB.mod_gallery_navigation.sys.ini</language>
-		<language tag="de-DE">de-DE.mod_gallery_navigation.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_gallery_navigation.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_gallery_navigation.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_gallery_navigation.ini</language>
 	</languages>
 </extension>
